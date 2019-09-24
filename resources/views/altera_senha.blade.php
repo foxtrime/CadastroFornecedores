@@ -6,7 +6,7 @@
    <div class="row justify-content-md-center">
       <div class="col-md-auto">
          <div class="card" style="width: 18rem;">
-            <center><img src="/img/loading.gif" class="card-img-top" style="width:66% "></center>
+            <center><img src="{{ asset('img/loading.gif')}}" class="card-img-top" style="width:66% "></center>
             <div class="card-body">
                <form action="{{ url('salvasenha') }}" method="POST" class="    form-horizontal" id="form-altera-senha">
                {{ csrf_field() }}
