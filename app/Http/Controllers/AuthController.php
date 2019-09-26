@@ -20,7 +20,7 @@ class AuthController extends Controller
         //dd($credentials);
         if(Auth::attempt($credentials)){
             $usuario_logado = Auth::user();
-            $retorno = DB::connection('mysql2')->select("select consulta_role($usuario_logado->id , 'EMPREENDEDOR', 'LOGIN') as retorno");
+            $retorno = DB::connection('mysql2')->select("select consulta_role($usuario_logado->id , 'CADFOR', 'LOGIN') as retorno");
             //dd($retorno[0]->retorno);
             if($retorno[0]->retorno){
                 return redirect()->intended('home');
