@@ -18,4 +18,10 @@ class Cadastro extends Model
         'email',
         'telefone',
     ];
+
+    public function arquivos()
+{
+   return $this->hasMany(Arquivo::class);
+}
+
 }

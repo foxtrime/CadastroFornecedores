@@ -28,6 +28,10 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/cadastro' , 'CadastroController');
+
+
+Route::post('upload', 'CadastroController@upload')->name('upload');
+
 Route::get('/sucesso', 'CadastroController@sucesso');
 
 

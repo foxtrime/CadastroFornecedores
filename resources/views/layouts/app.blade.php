@@ -18,6 +18,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.css">
 
    <style>
 /* Style The Dropdown Button */
@@ -119,6 +120,7 @@
     </div>
     {{-- Vanilla Masker --}}
       <script src="{{ asset('js/vanillaMasker.min.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.js"></script>
     @stack('scripts')
 
     

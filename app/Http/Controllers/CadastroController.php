@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UploadRequest;
 use Illuminate\Http\Request;
 use App\Cadastro;
+use App\Arquivo;
 
 class CadastroController extends Controller
 {
@@ -14,6 +16,7 @@ class CadastroController extends Controller
 
     public function store(Request $request)
     {
+      // dd($request->files);
         $this->validate($request,[
             'razao_social' => 'required',
             'cnpj' => 'required',
@@ -29,6 +32,17 @@ class CadastroController extends Controller
 
         $cadastro->save();
 
+        $photos = count($request->photos);
+        
+        
+        foreach ($request->photos as $photo) {
+            //dd($photo);
+            $filename = $photo->store('photos');
+            Arquivo::create([
+                'cadastro_id' => $cadastro->id,
+                'filename' => $filename
+            ]);
+        }
         // return view('user.sucesso');
         return redirect()->action('CadastroController@sucesso');
         //dd($request);
@@ -38,4 +52,5 @@ class CadastroController extends Controller
     {
         return view('user.sucesso');
     }
+
 }

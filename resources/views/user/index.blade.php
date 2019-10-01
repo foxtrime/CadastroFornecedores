@@ -5,7 +5,7 @@
 		<div class="card">
 			<div class="card-body">
 				<center><h3 class="card-title">Cadastro de Fornecedores</h3></center>
-				<form method="POST" action="{{url('/cadastro')}}" id="form_cadastro">
+				<form method="POST" action="{{url('/cadastro')}}" enctype="multipart/form-data" id="form_cadastro">
 						{{ csrf_field() }}
 					<div class="form-group">
 						<label class="col-sm col-form-label">RAZÃO SOCIAL</label>
@@ -43,10 +43,12 @@
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm col-form-label">TELEFONE</label>
+						<label class="col-sm col-form-label">Telefone</label>
 						<input id="telefone" name="telefone" class="form-control form-control-sm" type="text" placeholder="" required>
 					</div>
 
+					<input multiple="multiple" name="photos[]" type="file"> 
+					
 					<center> 
 							<div>
 								<button type="submit" id="form_cadastro" class="botoes-acao btn btn-round btn-success enviar-relatorio">
@@ -67,26 +69,32 @@
 @endsection
 
 @push('scripts')
-		<script type="text/javascript">
-			$(document).ready(function(){
-				VMasker ($("#cnpj")).maskPattern("99.999.999/9999-99");
-				VMasker ($("#telefone")).maskPattern("(99)9999-99999");
-			});
-		</script>
 
-		<script>
-			$(function(){
-				$('body').submit(function(event){
-				if ($(this).hasClass('enviar-relatorio')) {
-					event.preventDefault();
-				}
-				else {
-					$(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
-					$(this).addClass('enviar-relatorio');
-				}
-			});
-			});
-			
-		</script>
+	<script type="text/javascript">
+		
+	</script>
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			VMasker ($("#cnpj")).maskPattern("99.999.999/9999-99");
+			VMasker ($("#telefone")).maskPattern("(99)9999-99999");
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$('body').submit(function(event){
+			if ($(this).hasClass('enviar-relatorio')) {
+				event.preventDefault();
+			}
+			else {
+				$(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
+				$(this).addClass('enviar-relatorio');
+			}
+		});
+		});
+		
+	</script>
+
+		
 @endpush
