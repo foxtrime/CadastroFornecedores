@@ -23,7 +23,7 @@
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm col-form-label">CNAE (Atividade Economicos)</label>
+						<label class="col-sm col-form-label">CNAE (Atividade Economica)</label>
 						<input id="cnae" name="cnae" class="form-control form-control-sm" type="text" placeholder="" required>
 					</div>
 
@@ -47,6 +47,8 @@
 						<input id="telefone" name="telefone" class="form-control form-control-sm" type="text" placeholder="" required>
 					</div>
 
+					<label class="col-sm col-form-label">Pode ser inserido mais de um arquivo.</label>
+					<label class="col-sm col-form-label">Tamanho limite 2MB.</label>
 					<input multiple="multiple" name="photos[]" type="file"> 
 					
 					<center> 
