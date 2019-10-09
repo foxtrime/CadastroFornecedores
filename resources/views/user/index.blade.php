@@ -49,7 +49,7 @@
 
 					<label class="col-sm col-form-label">Pode ser inserido mais de um arquivo.</label>
 					<label class="col-sm col-form-label">Tamanho limite 2MB.</label>
-					<input multiple="multiple" name="photos[]" type="file"> 
+					<input multiple="multiple" name="photos[]" type="file" accept="image/png, image/jpeg"> 
 					
 					<center> 
 							<div>
