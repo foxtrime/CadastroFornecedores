@@ -10,7 +10,8 @@ class Arquivo extends Model
 	public $timestamps = false;
 	protected $fillable = [
 	'cadastro_id',
-   'filename'
+   'filename',
+   'extensao'
   ];
 
     public function cadastro()

@@ -42,9 +42,9 @@ class HomeController extends Controller
 
         $a = $dados->arquivos;
         //dd($a);
-        $extensao = pathinfo($a, PATHINFO_EXTENSION);
+        
 
-        //dd($extensao);
+        //dd($dados);
         return view ('show',compact('dados','usuario','extensao'));
     }
 

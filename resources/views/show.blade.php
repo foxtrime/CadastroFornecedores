@@ -152,8 +152,15 @@
                                     </div>
                                     @if( count($dados->arquivos)>0 )
                                        @foreach( $dados->arquivos as $foto )
-                                          <img src="{{ asset('storage/'.$foto->filename) }}">
-                                          {{-- <a href="{{ asset('storage/'.$foto->filename) }}" >Clique aqui</a> --}}
+                                          @if($foto->extensao == "png")
+                                              <img src="{{ asset('storage/'.$foto->filename) }}"><p>
+                                          @elseif($foto->extensao == "pdf") 
+                                              <h5><p>PDF                               
+                                              <a href="{{ asset('storage/'.$foto->filename) }}" target="_blank">Clique aqui</a></h5>
+                                          @elseif($foto->extensao == "txt")
+                                              <h5><p>TXT                                
+                                              <a href="{{ asset('storage/'.$foto->filename) }}" target="_blank" >Clique aqui</a></h5>
+                                          @endif
                                        @endforeach
                                      @endif
                                  {{-- <h4 class="card-title pl-3">Mixed Grid

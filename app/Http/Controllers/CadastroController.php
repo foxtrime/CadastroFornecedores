@@ -36,13 +36,15 @@ class CadastroController extends Controller
         
         
         foreach ($request->photos as $photo) {
-            //dd($photo);
+            
             $filename = $photo->store('photos');
             Arquivo::create([
                 'cadastro_id' => $cadastro->id,
-                'filename' => $filename
+                'filename' => $filename,
+                'extensao' => $photo->extension()
             ]);
         }
+        //dd($photo->extension());
         // return view('user.sucesso');
         return redirect()->action('CadastroController@sucesso');
         //dd($request);

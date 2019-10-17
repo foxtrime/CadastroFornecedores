@@ -17,6 +17,7 @@ class CreateArquivosTable extends Migration
             $table->increments('id');
             $table->integer('cadastro_id')->unsigned();
             $table->string('filename');
+            $table->string('extensao');
 
             $table->foreign('cadastro_id')->references('id')->on('cadastro')->onDelete('cascade');
         });
